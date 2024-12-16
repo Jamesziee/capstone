@@ -1,0 +1,516 @@
+/* General */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #f5f5f5;
+    
+}
+.containers {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    
+}
+.bottom {
+    position: relative; /* Add relative positioning */
+   top: -10px; /* Use negative value to move it up */
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 170px;
+    
+    
+}
+.bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Sidebar Links */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+    transition: transform 0.2s ease; /* Smooth transition on hover */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition for background and text color */
+}
+
+.sidebar ul li a:hover {
+    background-color: #4a00e0; /* Background color change on hover */
+    color: #fff; /* Text color change on hover */
+    transform: scale(1.03); /* Subtle scaling to indicate hover without causing "jump" */
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Active Link Styling */
+.sidebar ul li a.active {
+    color: #4a00e0;
+    font-weight: bold;
+    background-color: #e0e7ff;
+    transition: none; /* Avoid transition for the active link */
+}
+.sidebar .settings-logout {
+    display: flex;
+    justify-content: space-between;
+}
+.sidebar .logo {
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Give some space from the top */
+    left: 20px; /* Align it to the left */
+    width: 70px; /* Set a fixed width */
+    height: 70px; /* Set a fixed height */
+}
+
+.sidebar .logo img {
+    width: 100%; /* Ensures image takes full width of the div */
+    height: 100%; /* Ensures image takes full height of the div */
+    object-fit: contain; /* Maintain the aspect ratio */
+}
+
+/* Positioning for the page container */
+.page-container {
+    position: relative;
+    padding: 20px;
+}
+
+/* User info styling */
+.user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: hsl(241, 98%, 65%);
+    padding: 5px;
+    transition: transform 0.2s ease;
+    border-radius: 3px;
+ 
+}
+
+/* Styling for user-info text */
+.user-info .name {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+    
+}
+.user-info:hover{
+    transform: translateY(-5px);
+}
+.user-info .grade {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    overflow: hidden;
+    width: calc(100% - 400px); /* Adjust width for the sidebar and right panel */
+}
+ .user-info img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+/* Carousel */
+.carousel {
+    width: 100%; /* Keep width adjustments if needed */
+    height: 350px; /* Keep height adjustments if needed */
+    margin: 10px auto; /* Adjust margin to reduce space above */
+    position: relative; /* Enable relative positioning */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+}
+
+.carousel .carousel-caption h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.carousel .carousel-caption p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+.carousel-bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Content Sections */
+.content {
+    position: relative;
+    gap: 20px;
+}
+
+/* Left Panel */
+.bottom {
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    width: 95%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.status, .add-student, .add-pickup {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    font-size: 14px; /* Reduced font size */
+    
+}
+.add-student, .add-pickup {
+    flex: 1;
+    padding: 5px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    font-size: 14px;
+    max-width: 100px; /* Set a max-width to control the width */
+}
+.status {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 20px; /* Space between student, picked-up-by, and name sections */
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    font-size: 14px;
+}
+.status h3 {
+   
+    top: 10px; /* Position above the main content */
+    left: 25%;
+    font-size: 16px;
+    font-weight: bold;
+}
+.status .student,
+.status .picked-up-by,
+.status .name {
+    display: flex;
+    align-items: center;
+}
+
+.student, .picked-up-by {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between image and name */
+    text-align: center;
+}
+.picked-up-by .status{
+    background: #00e676;
+}
+
+
+.status:hover, .add-student:hover, .add-pickup:hover {
+    transform: translateY(-5px);
+}
+.status h3, .add-student, .add-pickup {
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    color: #333;
+}
+.status .student {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.status .picked-up-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjusts space between elements */
+    padding-top: 10px;
+}
+.status .picked-up-by .status {
+    background: #00e676;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.status .picked-up-by img {
+    width: 40px; /* Set the size with higher priority */
+    height: 40px ;
+    border-radius: 50%; /* Rounded shape */
+    margin-right: 5px; /* Add spacing around the image */
+}
+.status .student img {
+    width: 40px; /* Smaller size */
+    height: 40px;
+    border-radius: 50%;
+}
+.student .status{
+    align-items: center;
+    background-color: #00e676;
+    color: white;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+/* Right Panel */
+.student-info {
+    background-color: #fff;
+    width: 200px; /* Fixed width */
+    max-width: 400px; /* Ensure it doesn't exceed this */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px; /* Space between profile and rightpanel */
+    position: relative; /* Use absolute positioning to move it more right */
+    right: 0; /* Align to the right */
+}
+
+.student-info .name h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+.student-info .student {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px; /* Adjust gap between image, name, and grade */
+}
+.student-info .student img {
+    width: 100px; /* Increase image size */
+    height: 100px;
+    border-radius: 50%;
+     /* Space below image */
+}
+.student-info .grade {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+.student-info .download-qr {
+    background: #00e676;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.student-info .download-qr i {
+    margin-left: 10px;
+}
+
+ .authorized {
+    display: flex;
+    flex-direction: column; /* Stack heading and person vertically */
+    align-items: center; /* Center the content horizontally */
+    gap: 10px; /* Space between heading and person content */
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Full width of parent container */
+    margin-top: 10px;
+}
+.adviser {
+    display: flex;
+    flex-direction: column; /* Stack heading and person vertically */
+    align-items: center; /* Center the content horizontally */
+    gap: 10px; /* Space between heading and person content */
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Full width of parent container */
+    margin-top: 10px;
+}
+.adviser h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align the heading */
+}
+
+.adviser img {
+    width: 30px; /* Set size of the image */
+    height: 30px;
+    border-radius: 50%; /* Round image */
+    display: inline-block;
+}
+.adviser .name {
+    font-size: 16px;
+    
+    color: #333; /* Darker color for readability */
+    display: inline-block;
+    margin: 0; /* Ensure no extra space below text */
+}
+.authorized .person .name {
+    font-size: 16px;
+   
+    color: #333; /* Darker color for readability */
+    display: inline-block;
+    margin: 0; /* Ensure no extra space below text */
+}
+.adviser .person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.authorized h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align the heading */
+}
+.authorized .person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.authorized .person img {
+    width: 30px; /* Set size of the image */
+    height: 30px;
+    border-radius: 50%; /* Round image */
+    display: inline-block;
+}
+.add-authorized {
+    font-size: 12px;
+    margin-top: 10px;
+    background: #00e676;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.add-authorized i {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        order: 2; /* Move sidebar to bottom on smaller screens */
+    }
+    
+    .main-content {
+        width: 100%;
+        order: 1;
+    }
+
+    .status, .add-student, .add-pickup {
+        min-width: 80px;
+        font-size: 12px;
+    }
+
+    .student-info {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .notification.success {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .notification.error {
+    background-color: #f44336;
+    color: white;
+  }
+  
